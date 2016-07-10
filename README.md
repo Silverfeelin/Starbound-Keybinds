@@ -67,6 +67,7 @@ This value indicates whether the keybind should activate only once (false), or e
 Note that a keybind will reset once one or more input options of it no longer match the current game input. This means the keybind `Bind.create("f", func, false)` will trigger once every time the `f` key is pressed down.
 
 [Back to Top](#starbound-keybinds)
+
 ## Syntax Options
 For every input option, please refer to the documentation of it's value type. The descriptions are based on the default keyboard configuration of the game.
 
@@ -109,6 +110,8 @@ Value indicating how far `position`, `aimPosition` and `aimRelative` may be off.
 An example:  `"aimRelative=20,25 aimOffset=2,10"`  
 If your relative aim is `(21, 17)`, the result would be true. The horizontal position `21` falls in the range of `20±2` and the vertical position `17` falls in the range of `25±10`.
 
+[Back to Top](#starbound-keybinds)
+
 ## Value Types
 
 #### Boolean
@@ -129,6 +132,8 @@ Two floats, separated with a comma.
 Bind.create("position=100,200 aimOffset=10,10", myFunction)
 ```
 
+[Back to Top](#starbound-keybinds)
+
 ## Bind Object
 The `Bind.create` function returnbs a bind object, that you can manipulate with the functions described below.
 ```lua
@@ -146,12 +151,20 @@ bind:unbind()
 bind:rebind()
 ```
 
+[Back to Top](#starbound-keybinds)
+
 ## Planned
 Nothing yet. Feel free to suggest things on [the discussion page](http://community.playstarbound.com/threads/library-tech-keybinds.112606/)!
+
+[Back to Top](#starbound-keybinds)
 
 ## Potential Issues
 * Multiple tech scripts could bind the same keys. This is actually a double-edged sword, since there may be scenarios where you'd want multiple different actions bound to the same key.
 
+[Back to Top](#starbound-keybinds)
+
 ## Contributing
 If you have any suggestions or feedback that might help improve this mod, please do post them [the discussion page](http://community.playstarbound.com/threads/library-tech-keybinds.112606/).  
 You can also create pull requests and contribute directly to the mod!
+
+[Back to Top](#starbound-keybinds)
