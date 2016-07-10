@@ -23,6 +23,8 @@ This file ensures that, as long it is present in your mods folder, the library w
 This script can be included in your own mod. This way, users don't have to install the Keybinds library themselves to use your mod.
 * Place the script in `/<yourMod>/scripts/`. The file name should remain `keybinds.lua`.
 
+[Back to Top](#starbound-keybinds)
+
 ## Usage
 Before you can create keybinds in your script, you'll first have to load the library.
 * At the top of your script, add `require "/scripts/keybinds.lua"`.  
@@ -64,6 +66,7 @@ Bind.create("g", function() sb.logInfo("You pressed the G key!") end)
 This value indicates whether the keybind should activate only once (false), or every game tick as long as the current game input matches the arguments of the keybind (true). Defaults to false.  
 Note that a keybind will reset once one or more input options of it no longer match the current game input. This means the keybind `Bind.create("f", func, false)` will trigger once every time the `f` key is pressed down.
 
+[Back to Top](#starbound-keybinds)
 ## Syntax Options
 For every input option, please refer to the documentation of it's value type. The descriptions are based on the default keyboard configuration of the game.
 
