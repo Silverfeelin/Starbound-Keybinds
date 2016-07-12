@@ -1,3 +1,12 @@
 {
-  "modname" : "Keybinds"
+  "name" : "Keybinds",
+  "friendlyName" : "Keybinds Library",
+  "priority" : 10,
+  "version" : "1.0",
+  "author" : "Silverfeelin",
+  "description" : "Allows tech mods to easily bind input options to code.
+
+For usage instructions, see: ^#61b3de;https://github.com/Silverfeelin/Starbound-Keybinds^reset;",
+  "requires" : [],
+  "includes" : []
 }
