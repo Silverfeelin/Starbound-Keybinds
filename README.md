@@ -17,7 +17,7 @@ Easily bind functions to one or more input methods.
 
 #### Mod pack
 This file ensures that, as long it is present in your mods folder, the library will be loaded and will be available in other scripts. It allows this mod to be used as a dependency in other mods, if these other mods don't include a copy of the script.
-* Place the mod pack file in your mods folder.
+* Place the `Keybinds.pak` file in your mods folder (eg. `D:\Steam\steamapps\common\Starbound\mods\`).
 
 #### Stand-alone script
 This script can be included in your own mod. This way, users don't have to install the Keybinds library themselves to use your mod.
