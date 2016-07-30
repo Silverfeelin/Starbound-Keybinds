@@ -54,7 +54,7 @@ You can also pass a table instead of a formatted string. Every parameter must in
 ```
 
 #### Function
-When the current gmae input matches the arguments of a created and active keybind, the function will be called. You can either pass a function that's already defined, or declare an anonymous function.  
+When the current game input matches the arguments of a created and active keybind, the function will be called. You can either pass a function that's already defined, or declare an anonymous function.  
 Keep in mind that function parameters are not supported.
 ``` lua
 function myFunction() sb.logInfo("You pressed the F key!") end
