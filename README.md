@@ -101,10 +101,13 @@ Position of your cursor on the world, in blocks.
 `aimPosition` relative to `position`.
 15. `f` ([boolean](#boolean))  
 True while holding F, without holding G or H.
+ * 'PlayerTechAction1' defaults to F.
 16. `g` ([boolean](#boolean))  
 True while holding G, without holding F or H.
+ * 'PlayerTechAction2' is not bound by default anymore. You can bind it by adding an option to the keybindingsmenu.config.
 17. `h` ([boolean](#boolean))  
 True while holding H, without holding F or G.
+ * 'PlayerTechAction3' is not bound by default anymore. You can bind it by adding an option to the keybindingsmenu.config.
 18. `aimOffset` ([vec2](#vec2))  
 Value indicating how far `position`, `aimPosition` and `aimRelative` may be off. With no value set, the default value `2,2` is used.  
 An example:  `"aimRelative=20,25 aimOffset=2,10"`  
