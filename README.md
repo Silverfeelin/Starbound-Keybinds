@@ -89,26 +89,28 @@ True while standing on the ground.
 True while actively running.
 9. `walking` ([boolean](#boolean))  
 True while actively walking (running while holding shift).
-10. `facingDirection` ([float](#float))  
+10. `jumping` ([boolean](#boolean))
+True while holding space.
+11. `facingDirection` ([float](#float))  
 `-1` while facing left. `1` while facing right.
-11. `liquidPercentage` ([float](#float))  
+12. `liquidPercentage` ([float](#float))  
 Value between `0` and `1`, indicating what percentage of your hitbox is submerged.
-12. `position` ([vec2](#vec2))  
+13. `position` ([vec2](#vec2))  
 Position of your character on the world, in blocks.
-13. `aimPosition` ([vec2](#vec2))  
+14. `aimPosition` ([vec2](#vec2))  
 Position of your cursor on the world, in blocks.
-14. `aimRelative` ([vec2](#vec2))  
+15. `aimRelative` ([vec2](#vec2))  
 `aimPosition` relative to `position`.
-15. `f` ([boolean](#boolean))  
+16. `f` ([boolean](#boolean))  
 True while holding F, without holding G or H.
  * 'PlayerTechAction1' defaults to F.
-16. `g` ([boolean](#boolean))  
+17. `g` ([boolean](#boolean))  
 True while holding G, without holding F or H.
  * 'PlayerTechAction2' is not bound by default anymore. You can bind it by adding an option to the keybindingsmenu.config.
-17. `h` ([boolean](#boolean))  
+18. `h` ([boolean](#boolean))  
 True while holding H, without holding F or G.
  * 'PlayerTechAction3' is not bound by default anymore. You can bind it by adding an option to the keybindingsmenu.config.
-18. `aimOffset` ([vec2](#vec2))  
+19. `aimOffset` ([vec2](#vec2))  
 Value indicating how far `position`, `aimPosition` and `aimRelative` may be off. With no value set, the default value `2,2` is used.  
 An example:  `"aimRelative=20,25 aimOffset=2,10"`  
 If your relative aim is `(21, 17)`, the result would be true. The horizontal position `21` falls in the range of `20±2` and the vertical position `17` falls in the range of `25±10`.
