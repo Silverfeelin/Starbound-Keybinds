@@ -29,6 +29,9 @@ keybinds.availableInputs = {
   f = true,
   g = true,
   h = true,
+  specialOne = true,
+  specialTwo = true,
+  specialThree = true,
   -- Don't set this one to false!
   aimOffset = true
 }
@@ -53,6 +56,9 @@ keybinds.inputStrings = {
   f = "f",
   g = "g",
   h = "h",
+  specialone = "specialOne",
+  specialtwo = "specialTwo",
+  specialthree = "specialThree",
   -- Don't set this one to false!
   aimoffset = "aimOffset"
 }
@@ -64,7 +70,7 @@ keybinds.input = {
   onGround = true, running = false, walking = false, jumping = false,
   facingDirection = 1, liquidPercentage = 0,
   position = {0, 0}, aimPosition = {0, 0}, aimOffset = {2, 2}, aimRelative = {0, 0},
-  f = false, g = false, h = false
+  f = false, g = false, h = false, specialOne = false, specialTwo = false, specialThree = false
 }
 
 --[[ Finalizes Keybinds by injecting function keybinds.update in the tech's main update function.]]
@@ -162,8 +168,11 @@ function keybinds.updateInput(args)
   sb.setLogMap("player_rel", string.format("%s %s", input.aimRelative[1], input.aimRelative[2]))
 
   input.f = args.moves.special == 1
+  input.specialOne = input.f
   input.g = args.moves.special == 2
+  input.specialTwo = input.g
   input.h = args.moves.special == 3
+  input.specialThree = input.h
 end
 
 --[[ Returns a keybind table from the given string.
