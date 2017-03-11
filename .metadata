@@ -1,7 +1,7 @@
 {
   "name" : "Keybinds",
   "friendlyName" : "Keybinds Library",
-  "priority" : 10,
+  "priority" : 999,
   "version" : "1.2.2",
   "author" : "Silverfeelin",
   "description" : "Allows tech mods to easily bind input options to code.
