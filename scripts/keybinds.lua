@@ -102,7 +102,7 @@ function keybinds.update(args)
   keybinds.updateInput(args)
 
   for _,bind in pairs(keybinds.binds) do
-
+    
     runFunction = true
 
     -- For every bind, check every arg.
@@ -168,11 +168,11 @@ function keybinds.updateInput(args)
   }
   sb.setLogMap("player_rel", string.format("%s %s", input.aimRelative[1], input.aimRelative[2]))
 
-  input.f = args.moves.special1
+  input.f = args.moves.special == 1
   input.specialOne = input.f
-  input.g = args.moves.special2
+  input.g = args.moves.special == 2
   input.specialTwo = input.g
-  input.h = args.moves.special3
+  input.h = args.moves.special == 3
   input.specialThree = input.h
 end
 
@@ -190,7 +190,7 @@ function keybinds.stringToKeybind(s)
     else
       key = keybinds.inputStrings[key]
       local valueString =  separator and v:sub(separator + 1) or ""
-
+      
       -- Default value is true
       local value = true
 
@@ -261,7 +261,7 @@ function Bind:change(args, f, repeatable)
       -- Convert point table tostring to vec2
       keybinds.setVec2(v)
     end
-  end
+  end 
 end
 
 function Bind:swap(otherBind)
