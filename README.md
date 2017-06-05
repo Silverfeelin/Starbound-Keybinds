@@ -23,6 +23,8 @@ This file ensures that, as long it is present in your mods folder, the library w
 This script can be included in your own mod. This way, users don't have to install the Keybinds library themselves to use your mod.
 * Place the script in `/<yourMod>/scripts/`. The file name should remain `keybinds.lua`.
 
+Note that bundled versions may conflict. IE. an outdated version in one mod may be used instead of the updated version in another mod, due to the load order of mods. As of v1.2.2, Keybinds will log a message indicating what version of the mod is loaded.
+
 [Back to Top](#starbound-keybinds)
 
 ## Usage
@@ -114,6 +116,8 @@ True while holding H, without holding F or G.
 Value indicating how far `position`, `aimPosition` and `aimRelative` may be off. With no value set, the default value `2,2` is used.  
 An example:  `"aimRelative=20,25 aimOffset=2,10"`  
 If your relative aim is `(21, 17)`, the result would be true. The horizontal position `21` falls in the range of `20±2` and the vertical position `17` falls in the range of `25±10`.
+20. `time` ([float](#float))  
+Value indicating how long the other input options should match before running the function. Note that this time is **not** used as an interval when repeatable is set to true; the function will still be called every tick.
 
 [Back to Top](#starbound-keybinds)
 
