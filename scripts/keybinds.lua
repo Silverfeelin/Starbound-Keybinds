@@ -6,7 +6,7 @@ https://github.com/Silverfeelin/Starbound-Keybinds
 keybinds = {
   binds = {},
   initialized = false,
-  version = "1.2.2"
+  version = "1.3.0"
 }
 
 -- For every type of input, set whether it can be bound.
