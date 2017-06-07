@@ -104,13 +104,13 @@ Position of your cursor on the world, in blocks.
 15. `aimRelative` ([vec2](#vec2))  
 `aimPosition` relative to `position`.
 16. `f` ([boolean](#boolean))  
-True while holding F, without holding G or H.
+True while holding F.
  * 'PlayerTechAction1' defaults to F.
 17. `g` ([boolean](#boolean))  
-True while holding G, without holding F or H.
+True while holding G.
  * 'PlayerTechAction2' is not bound by default anymore. You can bind it by adding an option to the keybindingsmenu.config.
 18. `h` ([boolean](#boolean))  
-True while holding H, without holding F or G.
+True while holding H.
  * 'PlayerTechAction3' is not bound by default anymore. You can bind it by adding an option to the keybindingsmenu.config.
 19. `aimOffset` ([vec2](#vec2))  
 Value indicating how far `position`, `aimPosition` and `aimRelative` may be off. With no value set, the default value `2,2` is used.  
@@ -144,7 +144,7 @@ Bind.create("position=100,200 aimOffset=10,10", myFunction)
 [Back to Top](#starbound-keybinds)
 
 ## Bind Object
-The `Bind.create` function returnbs a bind object, that you can manipulate with the functions described below.
+The `Bind.create` function returns a bind object, that you can manipulate with the functions described below.
 ```lua
 -- Create a bind
 local bind = Bind.create(args, f, repeatable)
