@@ -103,14 +103,14 @@ Position of your character on the world, in blocks.
 Position of your cursor on the world, in blocks.
 15. `aimRelative` ([vec2](#vec2))  
 `aimPosition` relative to `position`.
-16. `f` ([boolean](#boolean))  
-True while holding F.
+16. `f` / `specialOne` ([boolean](#boolean))  
+True while holding the first tech action key.
  * 'PlayerTechAction1' defaults to F.
-17. `g` ([boolean](#boolean))  
-True while holding G.
+17. `g` / `specialTwo` ([boolean](#boolean))  
+True while holding the second tech action key.
  * 'PlayerTechAction2' is not bound by default anymore. You can bind it by adding an option to the keybindingsmenu.config.
-18. `h` ([boolean](#boolean))  
-True while holding H.
+18. `h` / `specialThree` ([boolean](#boolean))  
+True while holding the third tech action key.
  * 'PlayerTechAction3' is not bound by default anymore. You can bind it by adding an option to the keybindingsmenu.config.
 19. `aimOffset` ([vec2](#vec2))  
 Value indicating how far `position`, `aimPosition` and `aimRelative` may be off. With no value set, the default value `2,2` is used.  
