@@ -91,9 +91,9 @@ For every input option, please refer to the documentation of it's value type. Th
 | `position` | [vec2](#vec2) | World position of your character in blocks. |
 | `aimPosition` | [vec2](#vec2) | Position of your cursor on the world, in blocks.
 | `aimRelative` | [vec2](#vec2) | `aimPosition` relative to `position`. |
-| `specialOne` | [boolean](#boolean) | True while holding F (`PlayerTechAction1`). |
-| `specialTwo` | [boolean](#boolean) | True while holding G (`PlayerTechAction2`). |
-| `specialThree` | [boolean](#boolean) | True while holding H (`PlayerTechAction3`). |
+| `specialOne` | [boolean](#boolean) | True while holding the first tech action key (`PlayerTechAction1`). |
+| `specialTwo` | [boolean](#boolean) | True while holding the second tech action key (`PlayerTechAction2`). |
+| `specialThree` | [boolean](#boolean) | True while holding the third tech action key (`PlayerTechAction3`). |
 | aimOffset | [vec2](#vec2) | Value indicating how far `position`, `aimPosition` and `aimRelative` may be off. With no value set, the default value `2,2` is used.<br>An example:  `"aimRelative=20,25 aimOffset=2,10"`<br>If your relative aim is `(21, 17)`, the result would be true. |
 | time | [float](#float) | Value indicating how long the other input options should match before running the function. Note that this time is **not** used as an interval when repeatable is set to true; the function will still be called every tick. |
 
