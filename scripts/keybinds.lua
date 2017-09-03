@@ -6,7 +6,7 @@ https://github.com/Silverfeelin/Starbound-Keybinds
 keybinds = {
   binds = {},
   initialized = false,
-  version = "1.3.0"
+  version = "1.3.2"
 }
 
 -- For every type of input, set whether it can be bound.
@@ -18,6 +18,7 @@ keybinds.availableInputs = {
   right = true,
   primaryFire = true,
   altFire = true,
+  shift = true,
   onGround = true,
   running = true,
   walking = true,
@@ -46,6 +47,7 @@ keybinds.inputStrings = {
   right = "right",
   primaryfire = "primaryFire",
   altfire = "altFire",
+  shift = "shift",
   onground = "onGround",
   running = "running",
   walking = "walking",
@@ -68,7 +70,7 @@ keybinds.inputStrings = {
 -- Default values, do not touch.
 keybinds.input = {
   up = false, left = false, down = false, right = false,
-  primaryFire = false, altFire = false,
+  primaryFire = false, altFire = false, shift = false,
   onGround = true, running = false, walking = false, jumping = false,
   facingDirection = 1, liquidPercentage = 0,
   position = {0, 0}, aimPosition = {0, 0}, aimOffset = {2, 2}, aimRelative = {0, 0},
@@ -136,6 +138,8 @@ function keybinds.updateInput(args)
 
   input.primaryFire = args.moves.primaryFire
   input.altFire = args.moves.altFire
+
+  input.shift = not args.moves.run
 
   input.onGround = mcontroller.onGround()
   input.running = mcontroller.running()
@@ -212,7 +216,6 @@ function string:split(sep)
   self:gsub(pattern, function(c) fields[#fields+1] = c end)
   return fields
 end
-
 
 Bind = {}
 Bind.__index = Bind

@@ -73,51 +73,29 @@ Note that a keybind will reset once one or more input options of it no longer ma
 ## Syntax Options
 For every input option, please refer to the documentation of it's value type. The descriptions are based on the default keyboard configuration of the game.
 
-1. `Up` ([boolean](#boolean))  
-True while holding W.
-2. `Left` ([boolean](#boolean))  
-True while holding A.
-3. `Down` ([boolean](#boolean))  
-True while holding S.
-4. `Right` ([boolean](#boolean))  
-True while holding D.
-5. `primaryFire` ([boolean](#boolean))  
-True while holding down the left mouse button.
-6. `altFire` ([boolean](#boolean))  
-True while holding down the right mouse button.
-7. `onGround` ([boolean](#boolean))  
-True while standing on the ground.
-8. `running` ([boolean](#boolean))  
-True while actively running.
-9. `walking` ([boolean](#boolean))  
-True while actively walking (running while holding shift).
-10. `jumping` ([boolean](#boolean))
-True while holding space.
-11. `facingDirection` ([float](#float))  
-`-1` while facing left. `1` while facing right.
-12. `liquidPercentage` ([float](#float))  
-Value between `0` and `1`, indicating what percentage of your hitbox is submerged.
-13. `position` ([vec2](#vec2))  
-Position of your character on the world, in blocks.
-14. `aimPosition` ([vec2](#vec2))  
-Position of your cursor on the world, in blocks.
-15. `aimRelative` ([vec2](#vec2))  
-`aimPosition` relative to `position`.
-16. `f` ([boolean](#boolean))  
-True while holding F.
- * 'PlayerTechAction1' defaults to F.
-17. `g` ([boolean](#boolean))  
-True while holding G.
- * 'PlayerTechAction2' is not bound by default anymore. You can bind it by adding an option to the keybindingsmenu.config.
-18. `h` ([boolean](#boolean))  
-True while holding H.
- * 'PlayerTechAction3' is not bound by default anymore. You can bind it by adding an option to the keybindingsmenu.config.
-19. `aimOffset` ([vec2](#vec2))  
-Value indicating how far `position`, `aimPosition` and `aimRelative` may be off. With no value set, the default value `2,2` is used.  
-An example:  `"aimRelative=20,25 aimOffset=2,10"`  
-If your relative aim is `(21, 17)`, the result would be true. The horizontal position `21` falls in the range of `20±2` and the vertical position `17` falls in the range of `25±10`.
-20. `time` ([float](#float))  
-Value indicating how long the other input options should match before running the function. Note that this time is **not** used as an interval when repeatable is set to true; the function will still be called every tick.
+| Key | Type | Description |
+| --- | ---- | ----------- |
+| `up` | [boolean](#boolean) | True while holding <kbd>w</kbd>. |
+| `left` | [boolean](#boolean) | True while holding <kbd>a</kbd>. |
+| `down` | [boolean](#boolean) | True while holding <kbd>s</kbd>. |
+| `right` | [boolean](#boolean) | True while holding <kbd>d</kbd>. |
+| `primaryFire` | [boolean](#boolean) | True while holding down the left mouse button. |
+| `altFire` | [boolean](#boolean) | True while holding down the right mouse button. |
+| `shift` | [boolean](#boolean) | True while holding down <kbd>shift</kbd>. |
+| `onGround` | [boolean](#boolean) | True while standing on the ground. |
+| `running` | [boolean](#boolean) | True while actively running. |
+| `walking` | [boolean](#boolean) | True while actively walking (running while holding shift). |
+| `jumping` | [boolean](#boolean) | True while holding space. |
+| `facingDirection` | [float](#float) | `-1` while facing left. `1` while facing right. |
+| `liquidPercentage` | [float](#float) | Value between `0` and `1`, indicating what percentage of your hitbox is submerged. |
+| `position` | [vec2](#vec2) | World position of your character in blocks. |
+| `aimPosition` | [vec2](#vec2) | Position of your cursor on the world, in blocks.
+| `aimRelative` | [vec2](#vec2) | `aimPosition` relative to `position`. |
+| `specialOne` | [boolean](#boolean) | True while holding F (`PlayerTechAction1`). |
+| `specialTwo` | [boolean](#boolean) | True while holding G (`PlayerTechAction2`). |
+| `specialThree` | [boolean](#boolean) | True while holding H (`PlayerTechAction3`). |
+| aimOffset | [vec2](#vec2) | Value indicating how far `position`, `aimPosition` and `aimRelative` may be off. With no value set, the default value `2,2` is used.<br>An example:  `"aimRelative=20,25 aimOffset=2,10"`<br>If your relative aim is `(21, 17)`, the result would be true. |
+| time | [float](#float) | Value indicating how long the other input options should match before running the function. Note that this time is **not** used as an interval when repeatable is set to true; the function will still be called every tick. |
 
 [Back to Top](#starbound-keybinds)
 
