@@ -6,7 +6,7 @@ https://github.com/Silverfeelin/Starbound-Keybinds
 keybinds = {
   binds = {},
   initialized = false,
-  version = "1.3.2"
+  version = "1.3.3"
 }
 
 -- For every type of input, set whether it can be bound.
@@ -35,8 +35,9 @@ keybinds.availableInputs = {
   specialTwo = true,
   specialThree = true,
   time = true,
-  -- Don't set this one to false, ever!
-  aimOffset = true
+  -- Don't set these to false, ever!
+  aimOffset = true,
+  only = true
 }
 
 -- Set used to allow case-insensitive input strings.
@@ -57,14 +58,32 @@ keybinds.inputStrings = {
   position = "position",
   aimposition = "aimPosition",
   aimrelative = "aimRelative",
-  f = "f",
-  g = "g",
-  h = "h",
+  f = "specialOne",
+  g = "specialTwo",
+  h = "specialThree",
   specialone = "specialOne",
   specialtwo = "specialTwo",
   specialthree = "specialThree",
   time = "time",
-  aimoffset = "aimOffset"
+  aimoffset = "aimOffset",
+  only = "only"
+}
+
+-- Options that are specifically bound to keys users can hold down.
+keybinds.keys = {
+  up = true,
+  left = true,
+  down = true,
+  right = true,
+  primaryFire = true,
+  altFire = true,
+  shift = true,
+  f = true,
+  g = true,
+  h = true,
+  specialOne = true,
+  specialTwo = true,
+  specialThree = true
 }
 
 -- Default values, do not touch.
@@ -75,7 +94,7 @@ keybinds.input = {
   facingDirection = 1, liquidPercentage = 0,
   position = {0, 0}, aimPosition = {0, 0}, aimOffset = {2, 2}, aimRelative = {0, 0},
   f = false, g = false, h = false, specialOne = false, specialTwo = false, specialThree = false,
-  time = 0
+  time = 0, only = false
 }
 
 -- Unique Bind identifier, used to track time without worrying about shifting indices.
@@ -156,11 +175,8 @@ function keybinds.updateInput(args)
   }
   sb.setLogMap("player_rel", string.format("%s %s", input.aimRelative[1], input.aimRelative[2]))
 
-  input.f = args.moves.special1
   input.specialOne = input.f
-  input.g = args.moves.special2
   input.specialTwo = input.g
-  input.h = args.moves.special3
   input.specialThree = input.h
 end
 
@@ -253,6 +269,15 @@ function Bind:change(args, f, repeatable)
     elseif type(v) == "table" and #v == 2 and type(v[1]) == "number" and type(v[2]) == "number" then
       -- Convert point table tostring to vec2
       keybinds.setVec2(v)
+    end
+  end
+
+  -- If "only" is set, set valid unset keys to false.
+  if self.args["only"] then
+    for k,v in pairs(keybinds.availableInputs) do
+      if v and keybinds.keys[k] and self.args[k] == nil then
+        self.args[k] = false
+      end
     end
   end
 end
