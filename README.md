@@ -1,33 +1,38 @@
 # Starbound Keybinds
+
 Easily bind functions to one or more input methods.
 
 **Note: Parts of this README may be moved to [the Wiki](https://github.com/Silverfeelin/Starbound-Keybinds/wiki) in the future to keep everything neat and tidy.**
 
 ## Table of Contents
+
 - [Installation](#installation)
 - [Usage](#usage)
 - [Syntax Options](#syntax-options)
 - [Value Types](#value-types)
 - [Bind Object](#bind-object)
-- [Planned](#planned)
 - [Potential Issues](#potential-issues)
 - [Contributing](#contributing)
 
 ## Installation
 
 #### Mod pack
+
 This file ensures that, as long it is present in your mods folder, the library will be loaded and will be available in other scripts. It allows this mod to be used as a dependency in other mods, if these other mods don't include a copy of the script.
 * Place the `Keybinds.pak` file in your mods folder (eg. `D:\Steam\steamapps\common\Starbound\mods\`).
 
 #### Stand-alone script
+
 This script can be included in your own mod. This way, users don't have to install the Keybinds library themselves to use your mod.
 * Place the script in `/<yourMod>/scripts/`. The file name should remain `keybinds.lua`.
 
-Note that bundled versions may conflict. IE. an outdated version in one mod may be used instead of the updated version in another mod, due to the load order of mods. As of v1.2.2, Keybinds will log a message indicating what version of the mod is loaded.
+Note that bundled versions may conflict. For example, an outdated version in another mod may be used instead of the updated version in your mod, due to how mods are loaded. Keybinds will log a message indicating what version of the mod is loaded.  
+To work around this issue, you could place the script in a different location and use that location instead.
 
 [Back to Top](#starbound-keybinds)
 
 ## Usage
+
 Before you can create keybinds in your script, you'll first have to load the library.
 * At the top of your script, add `require "/scripts/keybinds.lua"`.  
 
@@ -37,40 +42,44 @@ You can press on any of the function parameters for more information.
 > Bind.create([syntax](#syntax), [func](#function), [repeatable](#repeatable))
 
 #### Syntax
+
 Default syntax for one key: `key=value`. Please note the following:
 
 1. Every input key and value pair should be separated with a space.  
-  `"f down"`
+  `"specialOne down"`
 2. Key and value in a pair should be separated with `=`.  
-  `"f=true down=true up=false"`
+  `"specialOne=true down=true up=false"`
 3. The value is optional. By default, `true` will be set if no value is specified.
 ⋅⋅* Note that keys which don't accept a boolean will not work without a value.  
-  `"f down up=false"`
+  `"specialOne down up=false"`
 4. Keys are case-insensitive.  
   `"facingDirection=1"` equals `"facingdirection=1"`.
 
 You can also pass a table instead of a formatted string. Every parameter must include a value here, though.  
 ``` lua
-{f = true, right = true, up = false}
+{specialOne = true, right = true, up = false}
 {aimOffset = {10, 10}, aimRelative = {25,20} }
 ```
 
 #### Function
+
 When the current game input matches the arguments of a created and active keybind, the function will be called. You can either pass a function that's already defined, or declare an anonymous function.  
 Keep in mind that function parameters are not supported.
 ``` lua
 function myFunction() sb.logInfo("You pressed the F key!") end
-Bind.create("f", myFunction)
-Bind.create("g", function() sb.logInfo("You pressed the G key!") end)
+Bind.create("specialOne", myFunction)
+Bind.create("specialTwo", function() sb.logInfo("You pressed the G key!") end)
 ```
 
 #### Repeatable
+
 This value indicates whether the keybind should activate only once (false), or every game tick as long as the current game input matches the arguments of the keybind (true). Defaults to false.  
-Note that a keybind will reset once one or more input options of it no longer match the current game input. This means the keybind `Bind.create("f", func, false)` will trigger once every time the `f` key is pressed down.
+Note that a keybind will reset once one or more input options of it no longer match the current game input. This means the keybind `Bind.create("specialOne", func, false)` will trigger once every time the `f` key is pressed down.
 
 [Back to Top](#starbound-keybinds)
 
 ## Syntax Options
+
 For every input option, please refer to the documentation of it's value type. The descriptions are based on the default keyboard configuration of the game.
 
 | Key | Type | Description |
@@ -102,18 +111,21 @@ For every input option, please refer to the documentation of it's value type. Th
 ## Value Types
 
 #### Boolean
+
 `true` or `false`
 ```lua
-Bind.create("f=true, up=false", myFunction)
+Bind.create("specialOne=true, up=false", myFunction)
 ```
 
 #### Float
+
 Any positive or negative number. Decimals are allowed, but may not work in certain input options.
 ```lua
 Bind.create("facingDirection=1", myFunction)
 ```
 
 #### Vec2
+
 Two floats, separated with a comma.
 ```lua
 Bind.create("position=100,200 aimOffset=10,10", myFunction)
@@ -122,6 +134,7 @@ Bind.create("position=100,200 aimOffset=10,10", myFunction)
 [Back to Top](#starbound-keybinds)
 
 ## Bind Object
+
 The `Bind.create` function returns a bind object, that you can manipulate with the functions described below.
 ```lua
 -- Create a bind
@@ -140,18 +153,17 @@ bind:rebind()
 
 [Back to Top](#starbound-keybinds)
 
-## Planned
-Nothing yet. Feel free to suggest things on [the discussion page](http://community.playstarbound.com/threads/library-tech-keybinds.112606/)!
-
-[Back to Top](#starbound-keybinds)
-
 ## Potential Issues
-* Multiple tech scripts could bind the same keys. This is actually a double-edged sword, since there may be scenarios where you'd want multiple different actions bound to the same key.
+
+* Multiple tech scripts can bind the same keys. This is actually a double-edged sword, since there may be scenarios where you'd want multiple actions bound to the same key.
+
+Further issues or possible improvements can be found on the [Issues](https://github.com/Silverfeelin/Starbound-Keybinds/issues) page.
 
 [Back to Top](#starbound-keybinds)
 
 ## Contributing
-If you have any suggestions or feedback that might help improve this mod, please do post them [the discussion page](http://community.playstarbound.com/threads/library-tech-keybinds.112606/).  
+
+If you have any suggestions or feedback that might help improve this mod, please do create a [new Issue](https://github.com/Silverfeelin/Starbound-Keybinds/issues/new).  
 You can also create pull requests and contribute directly to the mod!
 
 [Back to Top](#starbound-keybinds)
