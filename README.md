@@ -1,4 +1,5 @@
 # Starbound Keybinds
+
 Easily bind functions to one or more input methods.
 
 **Note: Parts of this README may be moved to [the Wiki](https://github.com/Silverfeelin/Starbound-Keybinds/wiki) in the future to keep everything neat and tidy.**
@@ -63,7 +64,7 @@ end)
 #### Repeatable `optional`
 This value indicates whether the keybind should activate only once (`false`), or every game tick as long as the current game input matches the arguments of the keybind (`true`). Defaults to `false`.
 
-#### Disabled `optional `
+#### Disabled `optional`
 If `true`, the created bind can not activate until `bind:rebind()` is called.
 
 #### Return value
@@ -125,6 +126,7 @@ Bind.create("down=true up=false specialOne", myFunction)
 
 
 #### Float
+
 Any positive or negative number. Decimals are allowed, but may not work in certain input options.
 ```lua
 Bind.create("facingDirection=1", myFunction)
@@ -139,6 +141,7 @@ Bind.create("position=100,200 aimOffset=10,10", myFunction)
 [Back to Top](#starbound-keybinds)
 
 ## Bind Object
+
 The `Bind.create` function returns a bind object, that you can manipulate with the functions described below.
 ```lua
 -- Create a bind

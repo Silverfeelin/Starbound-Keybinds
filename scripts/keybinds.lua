@@ -1,6 +1,7 @@
 --[[
-Keybinds Library
-https://github.com/Silverfeelin/Starbound-Keybinds
+Keybinds Library (https://github.com/Silverfeelin/Starbound-Keybinds)
+Licensed under MIT (https://github.com/Silverfeelin/Starbound-Keybinds/blob/master/LICENSE)
+This file may be redistributed without including a copy of the license, as long as this header remains unmodified.
 ]]
 
 keybinds = {
