@@ -226,8 +226,9 @@ function Bind:unbind()
 end
 
 -- Toggles the bind. See Bind:rebind and Bind:unbind
-function Bind:toggle()
-  if self.active then self:unbind() else self:rebind() end
+function Bind:toggle(active)
+  if active == nil then active = not self.active end
+  if active then self:rebind() else self:unbind() end
 end
 
 -- bind:isActive() = bind.active
