@@ -245,7 +245,7 @@ function Bind:matches(input)
   -- For every bind, check every arg.
   -- If an arg does not match the current input, prevent the function for this bind from being called.
   for k,v in pairs(self.args) do
-    if keybinds.input[k] == v then
+    if keybinds.input[k:lower()] == v then
       matches = matches + 1
     else
       -- Value for this argument does not match expected value for keybind.
