@@ -7,7 +7,7 @@ This file may be redistributed without including a copy of the license, as long 
 keybinds = {
   binds = {},
   initialized = false,
-  version = "1.3.4",
+  version = "1.3.5",
   debug = true
 }
 
